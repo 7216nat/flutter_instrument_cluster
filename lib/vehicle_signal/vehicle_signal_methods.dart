@@ -51,6 +51,9 @@ class VISS {
     subscribe(socket, ref, VSPath.vehicleDesLat);
     subscribe(socket, ref, VSPath.vehicleDesLng);
 
+    // custome
+    subscribe(socket, ref, VSPath.vehicleTrafficSignRecognition);
+
     update(socket, ref);
   }
 
@@ -82,6 +85,9 @@ class VISS {
     get(socket, ref, VSPath.vehicleCurrLng);
     get(socket, ref, VSPath.vehicleDesLat);
     get(socket, ref, VSPath.vehicleDesLng);
+
+    //custom
+    get(socket, ref, VSPath.vehicleTrafficSignRecognition);
   }
 
   static void authorize(WebSocket socket, WidgetRef ref) {
@@ -157,7 +163,7 @@ class VISS {
             if (dp["value"] != "---") {
               switch (path) {
                 case VSPath.vehicleSpeed:
-                  vehicleSignal.update(speed: dp["value"]);
+                  vehicleSignal.update(speed: double.parse(dp["value"]));
                   break;
                 case VSPath.vehicleEngineRPM:
                   vehicleSignal.update(rpm: dp["value"].toDouble());
@@ -289,6 +295,9 @@ class VISS {
                 case VSPath.vehicleDesLng:
                   vehicleSignal.update(desLng: dp['value']);
                   polylineDBNotifier.update(currPolyLineList: []);
+                  break;
+                case VSPath.vehicleTrafficSignRecognition:
+                  vehicleSignal.update(trafficSign: dp['value']);
                   break;
                 default:
                   print("$path Not Available yet!");

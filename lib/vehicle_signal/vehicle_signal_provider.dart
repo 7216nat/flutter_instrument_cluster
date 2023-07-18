@@ -43,6 +43,7 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     currLng: 76.95,
     desLat: 31.71,
     desLng: 76.95,
+    trafficSign: 50,
   );
   void update({
     double? speed,
@@ -79,6 +80,7 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     double? currLng,
     double? desLat,
     double? desLng,
+    double? trafficSign,
   }) {
     state = state.copyWith(
       speed: speed,
@@ -115,6 +117,7 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
       currLng: currLng,
       desLat: desLat,
       desLng: desLng,
+      trafficSign: trafficSign,
     );
   }
 }

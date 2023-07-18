@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import 'package:flutter/material.dart';
+import 'package:flutter_cluster_dashboard/screen/widgets/speed_recognize.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cluster_dashboard/map/navigationHome.dart';
 import 'package:flutter_cluster_dashboard/provider.dart';
@@ -222,28 +223,10 @@ class Home extends ConsumerWidget {
                                     Flexible(
                                       flex: 6,
                                       fit: FlexFit.tight,
-                                      child: SizedBox(
-                                        width: (330 * screenHeight) / 720,
-                                        child: (clusterConfig
-                                                    .enableNavigation &&
-                                                vehicle.isSteeringInfo)
-                                            ? const NavigationHome()
-                                            : Padding(
-                                                padding: EdgeInsets.symmetric(
-                                                    vertical:
-                                                        (36.0 * screenHeight) /
-                                                            720,
-                                                    horizontal:
-                                                        (48.0 * screenHeight) /
-                                                            720),
-                                                child: Image.asset(
-                                                  "images/logo_agl.png",
-                                                  width:
-                                                      (90 * screenHeight) / 480,
-                                                  color: Colors.grey.shade600,
-                                                ),
-                                              ),
-                                      ),
+                                      child: SpeedRecognize(
+                                          size: Size((36.0 * screenHeight) / 80,
+                                              (36.0 * screenHeight) / 100),
+                                          speed: vehicle.trafficSign.ceil()),
                                     ),
                                     const Flexible(
                                       flex: 1,

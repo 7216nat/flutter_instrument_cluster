@@ -43,7 +43,7 @@ class _GetConfigState extends ConsumerState<GetConfig> {
       });
 
       orsKeyFile.readAsString().then((content) {
-        keyContent = content.split(':')[1].trim();
+        keyContent = content;//.split(':')[1].trim();
         if (keyContent.isNotEmpty &&
             keyContent != 'YOU_NEED_TO_SET_IT_IN_LOCAL_CONF') {
           configStateProvider.update(orsApiKey: keyContent);
