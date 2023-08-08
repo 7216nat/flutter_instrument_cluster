@@ -14,30 +14,28 @@ class SpeedRecognize extends StatelessWidget {
       width: size?.width ?? 720,
       height: size?.height ?? 720,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          image: const DecorationImage(
-            image: AssetImage('images/speed.png'),
-            fit:BoxFit.cover),
-      ), 
-      child:  Center(
-        child: (speed >= 100) ? 
-          Text(
-            speed.toString(),
-            style: const TextStyle(
-                color: Colors.black, 
-                fontWeight: FontWeight.bold, 
-                fontSize: 120,
-                backgroundColor: Colors.white
-                ),
-          ) : Text(
-            speed.toString(),
-            style: const TextStyle(
-                color: Colors.black, 
-                fontWeight: FontWeight.bold, 
-                fontSize: 168,
-                backgroundColor: Colors.white
-                ),
-          ),
+        borderRadius: BorderRadius.circular(10),
+        image: const DecorationImage(
+            image: AssetImage('images/blank.png'), fit: BoxFit.cover),
+      ),
+      child: Center(
+        child: (speed >= 100)
+            ? Text(
+                speed.toString(),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 108,
+                    backgroundColor: Colors.white),
+              )
+            : Text(
+                speed.toString(),
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 150,
+                    backgroundColor: Colors.white),
+              ),
       ),
     );
   }

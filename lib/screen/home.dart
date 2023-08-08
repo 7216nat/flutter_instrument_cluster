@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_cluster_dashboard/screen/widgets/speed_recognize.dart';
+import 'package:flutter_cluster_dashboard/screen/widgets/volume_slider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cluster_dashboard/map/navigationHome.dart';
 import 'package:flutter_cluster_dashboard/provider.dart';
@@ -142,6 +143,11 @@ class Home extends ConsumerWidget {
                               ),
                             ),
                           ],
+                        ),
+                        VolumeSlider(
+                          screenHeight: screenHeight,
+                          screenWidth: screenWidth,
+                          sliderHeight: 70,
                         ),
                       ],
                     ),
