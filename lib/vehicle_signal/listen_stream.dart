@@ -53,7 +53,7 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       children: [
         Home(),
         WarningOverlay(),

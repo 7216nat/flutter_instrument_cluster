@@ -312,7 +312,10 @@ class VISS {
                   break;
                 case VSPath.vehicleObstacleDetect:
                   vehicleSignal.update(
-                      obstacleDetect: bool.parse(dp['value'].toString()));
+                      obstacleDetect:
+                          dp['value'].toString().toLowerCase() == "true"
+                              ? true
+                              : false);
                   break;
                 case VSPath.vehicleAcceleration:
                   vehicleSignal.update(
