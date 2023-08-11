@@ -63,12 +63,12 @@ class _GetConfigState extends ConsumerState<GetConfig> {
         config.homeLat == 0 ||
         config.homeLng == 0 ||
         config.orsPathParam == "") {
-      return Scaffold(
+      return const Scaffold(
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
+          children: [
             Text("ERROR",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Text(

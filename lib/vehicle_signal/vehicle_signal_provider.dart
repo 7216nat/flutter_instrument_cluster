@@ -43,7 +43,12 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     currLng: 76.95,
     desLat: 31.71,
     desLng: 76.95,
+
+    // custom
     trafficSign: 50,
+    volume: 50,
+    obstacleDetect: false,
+    acceleration: 0,
   );
   void update({
     double? speed,
@@ -80,7 +85,12 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     double? currLng,
     double? desLat,
     double? desLng,
+
+    // custom
     double? trafficSign,
+    double? volume,
+    bool? obstacleDetect,
+    double? acceleration,
   }) {
     state = state.copyWith(
       speed: speed,
@@ -117,7 +127,11 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
       currLng: currLng,
       desLat: desLat,
       desLng: desLng,
+      // volume: volume,
       trafficSign: trafficSign,
+      volume: volume,
+      obstacleDetect: obstacleDetect,
+      acceleration: acceleration,
     );
   }
 }

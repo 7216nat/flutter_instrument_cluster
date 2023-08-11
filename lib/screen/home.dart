@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
-
 import 'package:flutter/material.dart';
 import 'package:flutter_cluster_dashboard/screen/widgets/speed_recognize.dart';
 import 'package:flutter_cluster_dashboard/screen/widgets/volume_slider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_cluster_dashboard/map/navigationHome.dart';
 import 'package:flutter_cluster_dashboard/provider.dart';
 import 'package:flutter_cluster_dashboard/screen/widgets/guages/guage_props.dart';
 import 'package:flutter_cluster_dashboard/screen/paints/bottombar_paint.dart';
@@ -147,7 +145,7 @@ class Home extends ConsumerWidget {
                         VolumeSlider(
                           screenHeight: screenHeight,
                           screenWidth: screenWidth,
-                          sliderHeight: 70,
+                          sliderHeight: vehicle.volume,
                         ),
                       ],
                     ),

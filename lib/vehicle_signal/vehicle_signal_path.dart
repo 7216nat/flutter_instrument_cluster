@@ -16,8 +16,10 @@ class VSPath {
       "Vehicle.Powertrain.Transmission.SelectedGear";
   static const String vehicleLowBeamOn = "Vehicle.Body.Lights.Beam.Low.IsOn";
   static const String vehicleHighBeamOn = "Vehicle.Body.Lights.Beam.High.IsOn";
-  static const String vehicleParkingLightOn = "Vehicle.Body.Lights.Parking.IsOn";
-  static const String vehicleHazardLightOn = "Vehicle.Body.Lights.Hazard.IsSignaling";
+  static const String vehicleParkingLightOn =
+      "Vehicle.Body.Lights.Parking.IsOn";
+  static const String vehicleHazardLightOn =
+      "Vehicle.Body.Lights.Hazard.IsSignaling";
   static const String vehicleTravelledDistance = "Vehicle.TravelledDistance";
   static const String vehicleTrunkLocked = "Vehicle.Body.Trunk.Rear.IsLocked";
   static const String vehicleTrunkOpen = "Vehicle.Body.Trunk.Rear.IsOpen";
@@ -57,5 +59,10 @@ class VSPath {
       "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude";
   static const String vehicleDesLng =
       "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude";
-  static const String vehicleTrafficSignRecognition = "Vehicle.TraveledDistanceSinceStart";
+  static const String vehicleTrafficSignRecognition =
+      "Vehicle.TraveledDistanceSinceStart";
+  static const String vehicleVolume = "Vehicle.Cabin.Infotainment.Media.Volume";
+  static const String vehicleObstacleDetect =
+      "Vehicle.ADAS.ObstacleDetection.IsWarning";
+  static const String vehicleAcceleration = "Vehicle.Acceleration.Longitudinal";
 }

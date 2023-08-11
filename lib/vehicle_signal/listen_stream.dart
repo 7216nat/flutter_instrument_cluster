@@ -3,6 +3,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_cluster_dashboard/screen/widgets/warning_overlay.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cluster_dashboard/screen/home.dart';
 import 'package:flutter_cluster_dashboard/vehicle_signal/vehicle_signal_config.dart';
@@ -52,5 +53,12 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
   }
 
   @override
-  Widget build(BuildContext context) => const Home();
+  Widget build(BuildContext context) {
+    return const Stack(
+      children: [
+        Home(),
+        WarningOverlay(),
+      ],
+    );
+  }
 }

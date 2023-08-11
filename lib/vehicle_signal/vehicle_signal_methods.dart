@@ -2,7 +2,6 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_cluster_dashboard/cluster_config.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cluster_dashboard/map/networkPolyline.dart';
@@ -53,6 +52,9 @@ class VISS {
 
     // custome
     subscribe(socket, ref, VSPath.vehicleTrafficSignRecognition);
+    subscribe(socket, ref, VSPath.vehicleVolume);
+    subscribe(socket, ref, VSPath.vehicleObstacleDetect);
+    subscribe(socket, ref, VSPath.vehicleAcceleration);
 
     update(socket, ref);
   }
@@ -88,6 +90,9 @@ class VISS {
 
     //custom
     get(socket, ref, VSPath.vehicleTrafficSignRecognition);
+    get(socket, ref, VSPath.vehicleVolume);
+    get(socket, ref, VSPath.vehicleObstacleDetect);
+    get(socket, ref, VSPath.vehicleAcceleration);
   }
 
   static void authorize(WebSocket socket, WidgetRef ref) {
@@ -163,7 +168,8 @@ class VISS {
             if (dp["value"] != "---") {
               switch (path) {
                 case VSPath.vehicleSpeed:
-                  vehicleSignal.update(speed: double.parse(dp["value"]));
+                  vehicleSignal.update(
+                      speed: double.parse(dp['value'].toString()));
                   break;
                 case VSPath.vehicleEngineRPM:
                   vehicleSignal.update(rpm: dp["value"].toDouble());
@@ -298,6 +304,18 @@ class VISS {
                   break;
                 case VSPath.vehicleTrafficSignRecognition:
                   vehicleSignal.update(trafficSign: dp['value']);
+                  break;
+                case VSPath.vehicleVolume:
+                  vehicleSignal.update(
+                      volume: double.parse(dp['value'].toString()));
+                  break;
+                case VSPath.vehicleObstacleDetect:
+                  vehicleSignal.update(
+                      obstacleDetect: bool.parse(dp['value'].toString()));
+                  break;
+                case VSPath.vehicleAcceleration:
+                  vehicleSignal.update(
+                      acceleration: double.parse(dp['value'].toString()));
                   break;
                 default:
                   print("$path Not Available yet!");

@@ -82,7 +82,7 @@ class NoticeWidget extends StatelessWidget {
           Text(text1,
               style:
                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Text(text2,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
         ]),
@@ -104,9 +104,9 @@ class LoadingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      Spacer(),
+      const Spacer(),
       Column(children: [
-        Spacer(),
+        const Spacer(),
         Center(
             child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -118,9 +118,9 @@ class LoadingContainer extends StatelessWidget {
             child: child,
           ),
         )),
-        SizedBox(height: 32)
+        const SizedBox(height: 32)
       ]),
-      Spacer(),
+      const Spacer(),
     ]);
   }
 }

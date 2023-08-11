@@ -38,6 +38,9 @@ class VehicleSignal {
     required this.desLng,
     // custom
     required this.trafficSign,
+    required this.volume,
+    required this.obstacleDetect,
+    required this.acceleration,
   });
   final double speed;
   final double rpm;
@@ -76,6 +79,9 @@ class VehicleSignal {
 
   // custom
   final double trafficSign;
+  final double volume;
+  final bool obstacleDetect;
+  final double acceleration;
 
   VehicleSignal copyWith({
     double? speed,
@@ -114,6 +120,9 @@ class VehicleSignal {
     double? desLng,
     // custom
     double? trafficSign,
+    double? volume,
+    bool? obstacleDetect,
+    double? acceleration,
   }) {
     return VehicleSignal(
       speed: speed ?? (this.speed),
@@ -157,6 +166,9 @@ class VehicleSignal {
 
       //custom
       trafficSign: trafficSign ?? (this.trafficSign),
+      volume: volume ?? (this.volume),
+      obstacleDetect: obstacleDetect ?? (this.obstacleDetect),
+      acceleration: acceleration ?? (this.acceleration),
     );
   }
 }

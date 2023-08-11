@@ -18,7 +18,7 @@ class VolumeSlider extends StatefulWidget {
 
 class _VolumeSliderState extends State<VolumeSlider>
     with TickerProviderStateMixin {
-  double _currentSliderValue = -1;
+  double _currentSliderValue = 10;
 
   double calcPadding(double value, double height) {
     // values wrt to values at 720 height
@@ -37,12 +37,10 @@ class _VolumeSliderState extends State<VolumeSlider>
   @override
   void initState() {
     super.initState();
-    repeatOnce();
   }
 
   @override
   void didUpdateWidget(covariant VolumeSlider oldWidget) {
-    // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
     if (_currentSliderValue != widget.sliderHeight) {
       repeatOnce();
