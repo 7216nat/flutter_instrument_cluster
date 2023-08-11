@@ -168,8 +168,9 @@ class VISS {
             if (dp["value"] != "---") {
               switch (path) {
                 case VSPath.vehicleSpeed:
-                  vehicleSignal.update(
-                      speed: double.parse(dp['value'].toString()));
+                  ref
+                      .read(vehicleSignalSpeedProvider.notifier)
+                      .update(speed: double.parse(dp['value'].toString()));
                   break;
                 case VSPath.vehicleEngineRPM:
                   vehicleSignal.update(rpm: dp["value"].toDouble());

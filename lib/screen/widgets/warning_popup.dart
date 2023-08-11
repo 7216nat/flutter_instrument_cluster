@@ -16,7 +16,7 @@ class _WarningPopupState extends State<WarningPopup>
   )..repeat();
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
-    curve: Curves.fastEaseInToSlowEaseOut,
+    curve: Curves.fastOutSlowIn,
   );
 
   @override

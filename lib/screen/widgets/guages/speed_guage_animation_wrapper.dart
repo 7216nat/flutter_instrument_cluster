@@ -17,6 +17,7 @@ class SpeedGauge extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final VehicleSignal vehicle = ref.watch(vehicleSignalProvider);
+    final vehicleSpeed = ref.watch(vehicleSignalSpeedProvider);
 
     const double minSpeed = 0;
     const double maxSpeed = 240;
@@ -27,7 +28,7 @@ class SpeedGauge extends HookConsumerWidget {
     final animationController = useAnimationController(
       lowerBound: minSpeed,
       upperBound: maxSpeed,
-    )..animateTo(speedScaling * (vehicle.speed),
+    )..animateTo(speedScaling * (vehicleSpeed.speed),
         duration: sweepDuration, curve: Curves.linearToEaseOut);
 
     return AnimatedBuilder(

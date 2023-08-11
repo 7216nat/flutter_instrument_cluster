@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_cluster_dashboard/vehicle_signal/vehicle_signal_model.dart';
 
@@ -135,3 +136,29 @@ class VehicleSignalNotifier extends StateNotifier<VehicleSignal> {
     );
   }
 }
+
+@immutable
+class VehicleSignalSpeed {
+  const VehicleSignalSpeed({required this.speed});
+
+  final double speed;
+
+  VehicleSignalSpeed copyWith({double? speed}) {
+    return VehicleSignalSpeed(speed: speed ?? this.speed);
+  }
+}
+
+class VehicleSignalSpeedNotifier extends StateNotifier<VehicleSignalSpeed> {
+  VehicleSignalSpeedNotifier() : super(_initialValue);
+
+  static final VehicleSignalSpeed _initialValue = VehicleSignalSpeed(speed: 60);
+
+  void update({double? speed}) {
+    state = state.copyWith(speed: speed);
+  }
+}
+
+final vehicleSignalSpeedProvider =
+    StateNotifierProvider<VehicleSignalSpeedNotifier, VehicleSignalSpeed>(
+  (ref) => VehicleSignalSpeedNotifier(),
+);

@@ -34,7 +34,6 @@ class _OnBoardingPageState extends ConsumerState<OnBoardingPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       widget.socket.listen(
         (data) {
-          // print(data);
           VISS.parseData(ref, data);
         },
         onError: (e, stk) {
