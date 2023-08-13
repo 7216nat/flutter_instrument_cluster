@@ -11,6 +11,7 @@ class WarningOverlay extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // TODO: implement build
     final vehicle = ref.watch(vehicleSignalProvider);
+    final vehicleSpeed = ref.watch(vehicleSignalSpeedProvider);
     final windowHeight = MediaQuery.of(context).size.height;
     final windowWidth = MediaQuery.of(context).size.width;
 
@@ -30,7 +31,7 @@ class WarningOverlay extends ConsumerWidget {
     return Center(
         child: WarningPopup(
       obstacleDetect: vehicle.obstacleDetect,
-      speed: vehicle.speed,
+      speed: vehicleSpeed.speed,
       acceleration: vehicle.acceleration,
       speedSign: vehicle.trafficSign,
       screenHeight: screenHeight,
