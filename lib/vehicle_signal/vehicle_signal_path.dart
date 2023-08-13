@@ -59,8 +59,7 @@ class VSPath {
       "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Latitude";
   static const String vehicleDesLng =
       "Vehicle.Cabin.Infotainment.Navigation.DestinationSet.Longitude";
-  static const String vehicleTrafficSignRecognition =
-      "Vehicle.TraveledDistanceSinceStart";
+  static const String vehicleTrafficSignRecognition = "Vehicle.ADAS.SpeedSign";
   static const String vehicleVolume = "Vehicle.Cabin.Infotainment.Media.Volume";
   static const String vehicleObstacleDetect =
       "Vehicle.ADAS.ObstacleDetection.IsWarning";
