@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cluster_dashboard/screen/widgets/speed_warning.dart';
 
 class WarningPopup extends StatefulWidget {
-  const WarningPopup({Key? key, required this.speed}) : super(key: key);
-  final bool speed;
+  WarningPopup(
+      {Key? key,
+      required this.obstacleDetect,
+      required this.speed,
+      required this.acceleration,
+      required this.speedSign,
+      required this.screenWidth,
+      required this.screenHeight})
+      : super(key: key);
+  final bool obstacleDetect;
+  final double speed;
+  final double acceleration;
+  final double speedSign;
+  final double screenWidth;
+  final double screenHeight;
 
   @override
   _WarningPopupState createState() => _WarningPopupState();
@@ -27,14 +41,20 @@ class _WarningPopupState extends State<WarningPopup>
 
   @override
   Widget build(BuildContext context) {
-    if (!widget.speed) {
+    if (!widget.obstacleDetect) {
+      if (widget.speed > widget.speedSign && widget.acceleration > 0) {
+        return SpeedWarning(
+            speedLimit: widget.speedSign,
+            screenHeight: widget.screenHeight,
+            screenWidth: widget.screenWidth);
+      }
       return const SizedBox.shrink();
     } else {
       return FadeTransition(
         opacity: _animation,
         child: Container(
-          width: 400,
-          height: 400,
+          width: (150 * widget.screenWidth) / 480,
+          height: (250 * widget.screenHeight) / 480,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: const DecorationImage(
